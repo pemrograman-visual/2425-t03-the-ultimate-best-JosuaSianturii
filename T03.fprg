@@ -4,10 +4,10 @@
         <attribute name="name" value="T03"/>
         <attribute name="authors" value="HP"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-02 08:56:47 PM"/>
-        <attribute name="created" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDg6NTU6NDggUE07MjQzMA=="/>
-        <attribute name="edited" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDg6NTY6MjIgUE07MTtBU1VTO0xBUFRPUC1GNzhDSEI2RzsyMDI0LTA5LTI3OzEwOjMzOjA2IEFNO1QwM1sxXS5mcHJnOzYxNDY="/>
-        <attribute name="edited" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDg6NTY6NDcgUE07MTsyNTM4"/>
+        <attribute name="saved" value="2024-10-02 09:22:28 PM"/>
+        <attribute name="created" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDk6MjI6MDQgUE07MjQxNw=="/>
+        <attribute name="edited" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDk6MjI6MDcgUE07MTtBU1VTO0xBUFRPUC1GNzhDSEI2RzsyMDI0LTA5LTI3OzEwOjMzOjA2IEFNO1QwM1sxXS5mcHJnOzYxNDM="/>
+        <attribute name="edited" value="SFA7TEFQVE9QLVYxODUxVDU2OzIwMjQtMTAtMDI7MDk6MjI6MjggUE07MTsyNTMx"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -24,20 +24,22 @@
                 <input variable="Format"/>
                 <input variable="Harga"/>
                 <input variable="Margin"/>
+                <input variable="Stok"/>
+                <input variable="Rating"/>
                 <assign variable="Diskon" expression="Margin*(-1)/Harga"/>
-                <if expression="Diskon&gt;=40/100">
+                <if expression="Diskon&gt;40/100">
                     <then>
-                        <assign variable="Keterangan" expression="&quot;Once in a life time&quot;"/>
+                        <assign variable="Keterangan" expression="&quot;Once in a lifetime&quot;"/>
                     </then>
                     <else>
-                        <if expression="Diskon&gt;=20/100 &amp;&amp; Diskon&lt;40/100">
+                        <if expression="20/100 &lt; Diskon &amp;&amp; Diskon &lt; 40/100">
                             <then>
                                 <assign variable="Keterangan" expression="&quot;Never come twice&quot;"/>
                             </then>
                             <else>
-                                <if expression="Diskon&gt;0 &amp;&amp; Diskon&lt;20/100">
+                                <if expression="Diskon &lt;= 20/100 &amp;&amp; Diskon &gt;0">
                                     <then>
-                                        <assign variable="Keterangan" expression="&quot;No Regret&quot;"/>
+                                        <assign variable="Keterangan" expression="&quot;No regret&quot;"/>
                                     </then>
                                     <else>
                                         <assign variable="Keterangan" expression="&quot;---&quot;"/>
@@ -47,8 +49,6 @@
                         </if>
                     </else>
                 </if>
-                <input variable="Stok"/>
-                <input variable="Rating"/>
                 <if expression="Rating&gt;=4.7">
                     <then>
                         <assign variable="Kategori" expression="&quot;Best Pick&quot;"/>
@@ -80,7 +80,7 @@
                 </if>
                 <if expression="Kategori == &quot;Best Pick&quot; &amp;&amp; Keterangan == &quot;Once in a lifetime&quot;">
                     <then>
-                        <assign variable="Ultimate" expression="&quot;The Ultimate Best&quot;"/>
+                        <assign variable="Ultimate" expression="&quot;The ultimate best&quot;"/>
                     </then>
                     <else>
                         <assign variable="Ultimate" expression="&quot;---&quot;"/>

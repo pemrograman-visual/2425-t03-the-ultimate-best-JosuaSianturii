@@ -21,22 +21,22 @@ public class T03{
             format = input.nextLine();
             harga = Double.parseDouble(input.nextLine());
             margin = Double.parseDouble(input.nextLine());
+            stok = Integer.parseInt(input.nextLine());
+            rating = Double.parseDouble(input.nextLine());
             diskon = margin * -1 / harga;
-            if (diskon >= (double) 40 / 100) {
-                keterangan = "Once in a life time";
+            if (diskon > (double) 40 / 100) {
+                keterangan = "Once in a lifetime";
             } else {
-                if (diskon >= (double) 20 / 100 && diskon < (double) 40 / 100) {
+                if ((double) 20 / 100 < diskon && diskon < (double) 40 / 100) {
                     keterangan = "Never come twice";
                 } else {
-                    if (diskon > 0 && diskon < (double) 20 / 100) {
-                        keterangan = "No Regret";
+                    if (diskon <= (double) 20 / 100 && diskon > 0) {
+                        keterangan = "No regret";
                     } else {
                         keterangan = "---";
                     }
                 }
             }
-            stok = Integer.parseInt(input.nextLine());
-            rating = Double.parseDouble(input.nextLine());
             if (rating >= 4.7) {
                 kategori = "Best Pick";
             } else {
@@ -55,7 +55,7 @@ public class T03{
                 }
             }
             if (kategori.equals("Best Pick") && keterangan.equals("Once in a lifetime")) {
-                ultimate = "The Ultimate Best";
+                ultimate = "The ultimate best";
             } else {
                 ultimate = "---";
             }
