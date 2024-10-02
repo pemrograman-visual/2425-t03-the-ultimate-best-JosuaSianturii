@@ -1,5 +1,5 @@
-// 12S24035 - josua sianturi
-// 12S24058 - airene situmorang
+// 12S035-JOSUA SIANTURI
+// 12S24058-AIRENE SITUMORANG
 
 import java.util.*;
 import java.lang.Math;
